@@ -5,3 +5,6 @@ theme = "slim"
 
 [Params]
   Author = "Christoph Voigt"
+  Subtitle: "Your site's subtitle/tagline"
+  GithubID: "voigt"
+  TwitterID: "vogti"
