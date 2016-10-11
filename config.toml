@@ -3,8 +3,14 @@ title = "Voigt Site"
 languageCode = "en-us"
 theme = "slim"
 
-[Params]
+[params]
   Author = "Christoph Voigt"
   Subtitle = "Your site's subtitle/tagline"
   GithubID = "voigt"
   TwitterID = "vogti"
+
+[[menu.main]]
+    name = "about"
+    weight = -110
+    identifier = "about"
+    url = "/about/"
