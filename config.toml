@@ -1,4 +1,4 @@
-baseurl = "http://voigt.github.io/"
+baseurl = "https://voigt.github.io/"
 title = "Voigt Site"
 languageCode = "en-us"
 theme = "slim"
