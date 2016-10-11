@@ -1,6 +1,7 @@
 baseurl = "http://voigt.github.io/"
 title = "Voigt Site"
 languageCode = "en-us"
+theme = "slim"
 
 [Params]
   Author = "Christoph Voigt"
