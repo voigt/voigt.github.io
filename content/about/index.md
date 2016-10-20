@@ -9,7 +9,9 @@ title = "about"
 
 This is the personal playground of [Christoph Voigt](https://christophvoigt.com). He is an Application Manager at [GfK GmbH](http://www.gfk.com/).
 
-*Twitter:* @vogti
-*Github:* @voigt
-*Facebook:* vogti 
-*Instagram:* vogti 
+![](https://blog.christophvoigt.com/content/images/2014/10/about.jpg)
+
+* Twitter:* @vogti
+* Github:* @voigt
+* Facebook:* vogti 
+* Instagram:* vogti 
