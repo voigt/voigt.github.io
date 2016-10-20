@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Voigt Site</title>
+    <title>Notes on #Golang</title>
     <link>https://voigt.github.io/index.xml</link>
-    <description>Recent content on Voigt Site</description>
+    <description>Recent content on Notes on #Golang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 11 Oct 2016 21:29:40 +0200</lastBuildDate>
