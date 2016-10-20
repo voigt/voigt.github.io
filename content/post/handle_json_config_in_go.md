@@ -71,9 +71,11 @@ $ go run main.go
 http://host.name/api/v1/you/know/the/route/
 ```
 
-#### Extend the `Configuration struct`
+#### Extending the `Configuration struct`
 
-main.go
+Currently the Configuration struct does only handle static values. But wouldn't it be nice to store e.g. the complete URL (Hostname + Path) in a separate identifier of Configuration? 
+
+**main.go**
 ```go
 [...]
 
