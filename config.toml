@@ -8,6 +8,7 @@ theme = "slim"
   Subtitle = "Your site's subtitle/tagline"
   GithubID = "voigt"
   TwitterID = "vogti"
+  AnalyticsID: UA-44298521-2
 
 [[menu.main]]
     name = "about"
