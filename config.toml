@@ -1,11 +1,11 @@
 baseurl = "https://voigt.github.io/"
-title = "Voigt Site"
+title = "Notes on #Golang"
 languageCode = "en-us"
 theme = "slim"
 
 [params]
   Author = "Christoph Voigt"
-  Subtitle = "Your site's subtitle/tagline"
+#  Subtitle = "Notes on Golang"
   GithubID = "voigt"
   TwitterID = "vogti"
   AnalyticsID: UA-44298521-2
