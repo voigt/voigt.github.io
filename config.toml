@@ -9,6 +9,7 @@ theme = "slim"
   GithubID = "voigt"
   TwitterID = "vogti"
   AnalyticsID: UA-44298521-2
+  DisqusShortname: voigt-github-io
 
 [[menu.main]]
     name = "about"
