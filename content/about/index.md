@@ -11,7 +11,7 @@ This is the personal playground of [Christoph Voigt](https://christophvoigt.com)
 
 ![](https://blog.christophvoigt.com/content/images/2014/10/about.jpg)
 
-* Twitter:* @vogti
-* Github:* @voigt
-* Facebook:* vogti 
-* Instagram:* vogti 
+* **Twitter:** @vogti
+* **Github:** @voigt
+* **Facebook:** vogti 
+* **Instagram:** vogti 
