@@ -81,9 +81,11 @@ func main() {
 http://host.name/api/v1/you/know/the/route/
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;extend-the-configuration-struct&#34;&gt;Extend the &lt;code&gt;Configuration struct&lt;/code&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;extending-the-configuration-struct&#34;&gt;Extending the &lt;code&gt;Configuration struct&lt;/code&gt;&lt;/h4&gt;
 
-&lt;p&gt;main.go&lt;/p&gt;
+&lt;p&gt;Currently the Configuration struct does only handle static values. But wouldn&amp;rsquo;t it be nice to store e.g. the complete URL (Hostname + Path) in a separate identifier of Configuration?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;main.go&lt;/strong&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;[...]
 
