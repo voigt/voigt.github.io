@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title> How to handle JSON configs in Go &middot; Notes on #Golang </title>
+
+
+<link rel="stylesheet" href="https://voigt.github.io/css/slim.css">
+<link rel="stylesheet" href="https://voigt.github.io/css/highlight.min.css">
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Source+Code+Pro' rel='stylesheet' type='text/css'>
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+<link href="" rel="alternate" type="application/rss+xml" title="Notes on #Golang" />
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+  <h1 class="site-title"><a href="https://voigt.github.io/">Notes on #Golang</a></h1>
+  <p class="site-tagline"></p>
+  <div class="nav">
+    <a class="nav-btn" href="#">
+      <span class="ci ci-burger"></span>
+    </a>
+    <ul class="nav-list">
+      
+      <li><a href="/about/">about</a></li>
+       
+	  <li class="spacer">&ac;</li>
+
+      <li><a href="https://github.com/voigt">Github</a></li> 
+      <li><a href="https://twitter.com/vogti">Twitter</a></li> 
+      <li><a href="https://christophvoigt.com/">christophvoigt.com</a></li>
+    </ul>
+  </div>
+</div>
+    <div class="content">
+      <div class="posts">
+        <div class="post">
+          <h2 class="post-title"><a href="https://voigt.github.io/post/handle_json_config_in_go/">How to handle JSON configs in Go</a></h2>
+          <span class="post-date">Oct 20, 2016 </span>
+          <div class="post-content">
+            
+
+<p>At a certain point of development it becomes good practice to decouple the config from the code. Since I&rsquo;m coming from a Node.js background, I&rsquo;m used to use JSON for configuration. Luckily the Go standard library already comes with JSON support.</p>
+
+<p>The benefits of JSON are that it is fairly simple to parse and human readable/editable while offering semantics for lists and mappings (which can become quite handy), which is not the case with many ini-type config parsers.</p>
+
+<h4 id="example-usage">Example Usage</h4>
+
+<p>Lets assume we have following JSON config:</p>
+
+<p><strong>config.json</strong></p>
+
+<pre><code>{
+    &quot;host&quot;: &quot;http://host.name&quot;,
+    &quot;path&quot;: &quot;/api/v1/you/know/the/route/&quot;,
+    &quot;apikey&quot;: &quot;abcdefg&quot;
+}
+</code></pre>
+
+<p>Reading this config can look like this:</p>
+
+<p><strong>main.go</strong></p>
+
+<pre><code class="language-go">package main
+
+import (
+	&quot;fmt&quot;
+	&quot;encoding/json&quot;
+	&quot;os&quot;
+)
+
+// Create a configuration struct
+type Configuration struct {
+	Host   string `json:&quot;host&quot;`
+	Path   string `json:&quot;path&quot;`
+	Apikey string `json:&quot;apikey&quot;`
+}
+
+var Urlpath string
+
+func main() {
+
+	// Open config file
+	configFile, _ := os.Open(&quot;config.json&quot;)
+
+	decoder := json.NewDecoder(configFile) 	// Initialize a JSON decoder
+	c := Configuration{}                    //
+	err := decoder.Decode(&amp;c)               // Decode JSON and save it in c
+
+	if err != nil {
+		fmt.Println(&quot;Could not Read Configuration&quot;, err)
+		return
+	}
+
+	Urlpath = c.Host + c.Path
+	fmt.Println(Urlpath)
+
+}
+</code></pre>
+
+<p>So running our program would output the following:</p>
+
+<pre><code>$ go run main.go
+http://host.name/api/v1/you/know/the/route/
+</code></pre>
+
+<h4 id="extend-the-configuration-struct">Extend the <code>Configuration struct</code></h4>
+
+<p>main.go</p>
+
+<pre><code class="language-go">[...]
+
+type Configuration struct {
+	Host   string `json:&quot;host&quot;`
+	Path   string `json:&quot;path&quot;`
+	Apikey string `json:&quot;apikey&quot;`
+}
+
+// this will allow to access the whole URL via c.UrlPath()
+func (c *Configuration) UrlPath() string {
+	return c.Host + c.Path
+}
+
+func (c *Configuration) ApiSuffix() string {
+	return &quot;?apikey=&quot; + c.Apikey
+}
+
+func main() {
+
+	configFile, _ := os.Open(&quot;config.json&quot;)
+	decoder := json.NewDecoder(configFile)
+
+	c := Configuration{}
+	err := decoder.Decode(&amp;c)
+
+	if err != nil {
+		fmt.Println(&quot;Could not Read Configuration&quot;, err)
+		return
+	}
+
+	fmt.Println(c.UrlPath() + &quot;someParameter&quot; + c.ApiSuffix())
+
+}
+</code></pre>
+
+<p>Of course, other config formats, such as YAML or TOML would also do their work, but they&rsquo;d need to be added separately. JSON is build in and awesome ;)</p>
+
+          </div>
+        </div>
+        <div class="pagination"> 
+          <a class="btn next " href="https://voigt.github.io/about/"> Next</a> 
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+  
+  <p>Powered by <a href="http://gohugo.io">Hugo</a>. This theme—Slim—is open sourced on <a href="https://github.com/zhe/hugo-theme-slim">Github</a>.</p>
+  
+</div>
+
+  </div>
+  <script src="https://voigt.github.io/js/slim.js"></script>
+  <script src="https://voigt.github.io/js/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-44298521-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+</body>
+
+</html>
