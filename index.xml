@@ -127,6 +127,33 @@ func main() {
     </item>
     
     <item>
+      <title>SQLite3 - Basig usage in Golang</title>
+      <link>https://voigt.github.io/post/sqlite_basic_usage/</link>
+      <pubDate>Thu, 20 Oct 2016 20:37:05 +0200</pubDate>
+      
+      <guid>https://voigt.github.io/post/sqlite_basic_usage/</guid>
+      <description>
+
+&lt;h4 id=&#34;example-usage&#34;&gt;Example Usage&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;main.go&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+)
+
+func main() {
+
+	fmt.Println(Urlpath)
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>about</title>
       <link>https://voigt.github.io/about/</link>
       <pubDate>Tue, 11 Oct 2016 21:29:40 +0200</pubDate>
