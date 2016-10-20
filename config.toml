@@ -8,8 +8,8 @@ theme = "slim"
 #  Subtitle = "Notes on Golang"
   GithubID = "voigt"
   TwitterID = "vogti"
-  AnalyticsID: UA-44298521-2
-  DisqusShortname: voigt-github-io
+  AnalyticsID = "UA-44298521-2"
+  DisqusShortname = "voigt-github-io"
 
 [[menu.main]]
     name = "about"
