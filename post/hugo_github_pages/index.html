@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title> Setting up Hugo with Github pages &middot; Notes on #Golang </title>
+
+
+<link rel="stylesheet" href="https://voigt.github.io/css/slim.css">
+<link rel="stylesheet" href="https://voigt.github.io/css/highlight.min.css">
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Source+Code+Pro' rel='stylesheet' type='text/css'>
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+<link href="" rel="alternate" type="application/rss+xml" title="Notes on #Golang" />
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+  <h1 class="site-title"><a href="https://voigt.github.io/">Notes on #Golang</a></h1>
+  <p class="site-tagline"></p>
+  <div class="nav">
+    <a class="nav-btn" href="#">
+      <span class="ci ci-burger"></span>
+    </a>
+    <ul class="nav-list">
+      
+      <li><a href="/about/">about</a></li>
+       
+	  <li class="spacer">&ac;</li>
+
+      <li><a href="https://github.com/voigt">Github</a></li> 
+      <li><a href="https://twitter.com/vogti">Twitter</a></li> 
+      <li><a href="https://christophvoigt.com/">christophvoigt.com</a></li>
+    </ul>
+  </div>
+</div>
+    <div class="content">
+      <div class="posts">
+        <div class="post">
+          <h2 class="post-title"><a href="https://voigt.github.io/post/hugo_github_pages/">Setting up Hugo with Github pages</a></h2>
+          <span class="post-date">Oct 23, 2016 </span>
+          <div class="post-content">
+            
+
+<p>This post will cover how to organize your Git repository, setup <a href="https://travis-ci.org/">Travis-CI</a> and <a href="http://gohugo.io/">Hugo</a> in order to automatically deploy a static Website to to <a href="https://pages.github.com/">Github Pages</a>.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>This article assumes, that you have your Hugo website working locally. This means you&rsquo;ve already chosen a theme, generated some content and Hugo is building without errors.</p>
+
+<p>Hugo&rsquo;s default output folder is <code>public</code>. If you changed this using <code>publishdir</code> in your config file, you need to take care in the following steps.</p>
+
+<p>No working Hugo site yet? Then have a <a href="https://gohugo.io/overview/quickstart/">quickstart</a> and come back later!</p>
+
+<h2 id="preparing-your-github-repository">Preparing your Github Repository</h2>
+
+<p>Github pages allows us to setup <em>User/Organization Pages</em> or <em>Project Pages</em>. The following steps should work for both, but branch names might differ depending on how you want to organize the repository.</p>
+
+<p>Rule of thumb:</p>
+
+<ul>
+<li>For User/Organization Pages have your sources in any branch other than master</li>
+<li>For Project Pages, have your sources in any branch other than gh-pages</li>
+</ul>
+
+<p>To me it makes sense to have a <code>sources</code> branch, containing all files used by Hugo, and a <code>master</code> branch which holds all the static files ready to serve.
+However, if you go with Project Pages, you should have the sources in the <code>master</code> branch (e.g. in a sub-folder) and all generated files in the <code>gh-pages</code> branch (required by GitHub).</p>
+
+<h2 id="setting-up-travis-ci">Setting up Travis CI</h2>
+
+<p>On Travis CI, you can build and deploy your website automatically.</p>
+
+<p><strong>Create a build.sh</strong></p>
+
+<p>You will need <a href="https://github.com/X1011/git-directory-deploy/blob/master/deploy.sh">this</a> fancy shell script in the root of your folder in the <code>sources</code> branch.</p>
+
+<p>It will take care that all your generated files end up in the correct branch. Read the <a href="https://github.com/X1011/git-directory-deploy/blob/master/readme.md">readme</a> for the details.</p>
+
+<p><strong>Generate an Github access token</strong></p>
+
+<p>You&rsquo;ll need to generate a new &ldquo;Personal Access Token&rdquo; from this Github page: <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a>. Click on &ldquo;Generate new token&rdquo; and follow the instructions. Select <code>public_repo</code> or <code>repo</code> scopes. After generation copy the token.</p>
+
+<p><img src="https://s3-eu-central-1.amazonaws.com/friendly-ghost/2016/10/Screen_Shot_2016_10_23_at_23_37_38-1477258737575.png" alt="New Personal Access Token" /></p>
+
+<p><strong>Encrypt the token</strong></p>
+
+<p>In order to use the token on Travis CI you need to encrypt it. Why? Well your just generated token allows Third Parties the access to your repository. As the <code>travis.yml</code> will reside in your public repository, you will not want, that someone else except Travis can read this token.
+Use the <a href="https://docs.travis-ci.com/user/encryption-keys/">Travis CLI tool</a> to encrypt the token. Install it:</p>
+
+<pre><code>$ gem install travis
+</code></pre>
+
+<p>and use it (make sure to replace <code>GENERATED_TOKEN</code>, <code>USERNAME</code> and <code>REPO_NAME</code>):</p>
+
+<pre><code>$ travis encrypt GIT_DEPLOY_REPO=https://&lt;GENERATED_TOKEN&gt;@github.com/&lt;USERNAME&gt;/&lt;REPO_NAME&gt;.git
+</code></pre>
+
+<p><strong>Setup .travis.yml</strong></p>
+
+<p>You have to create <code>.travis.yml</code> right into your <code>sources</code> branch, containing all the details Travis needs to know for the build. The contents should be as follows:</p>
+
+<script src="https://gist.github.com/voigt/56ed4582db245cc03ce4c22258f7cf66.js"></script>
+
+<p><strong>Configure Travis-CI</strong></p>
+
+<p>Now you have to tell Travis which repository should be build. Login to Travis-CI and select your repo.</p>
+
+<p>In order to make sure Travis builds with every commit to the Repository, the Settings should look like this:</p>
+
+<p><img src="https://s3-eu-central-1.amazonaws.com/friendly-ghost/2016/10/Screen_Shot_2016_10_23_at_23_44_14-1477259183231.png" alt="Travis-CI Settings" /></p>
+
+<h2 id="prepare-a-hugo-binary">Prepare a Hugo binary</h2>
+
+<p>You could advise Travis CI to install Hugo during the website build. A much more elegant way is to cross compile the Hugo binary yourself and then deploy it in the <code>sources</code> branch. This will also speedup the build.</p>
+
+<p>Sounds complicated? Not really: Run the following commands line by line</p>
+
+<pre><code>$ mkdir binaries &amp;&amp; cd binaries
+$ env GOPATH=&quot;`pwd`&quot; go get -v github.com/spf13/hugo
+$ env GOPATH=&quot;`pwd`&quot; GOOS=linux GOARCH=amd64 go build -v github.com/spf13/hugo
+</code></pre>
+
+<p>This will create your <code>hugo</code> binary, compiled for a Travis VM. Make sure to add it to your repo. You can remove all the source clutter.</p>
+
+<h2 id="wrapping-up">Wrapping up</h2>
+
+<p>In the end, this is what the root directory of your <code>sources</code> branch should look like:</p>
+
+<pre><code>├── [archetypes]
+├── [binaries]
+    └── hugo
+├── [content]
+├── [data]
+├── [layouts]
+├── [static]
+├── [themes]
+├── config.toml
+├── deploy.sh
+├── .travis.yml
+└── README.md
+</code></pre>
+
+<p>The important files are <code>.travis.yml</code>, <code>deploy.sh</code> and the <code>hugo</code> binary. The other ones are generated by Hugo.</p>
+
+<p>No with every push to GitHub Travis-CI should run and generate static HTML and push it back to your <code>master</code> branch. The results should be visible on your GitHub Page.</p>
+
+<p><em>This Article was first published on <a href="https://blog.christophvoigt.com/setting-up-hugo-with-github-pages/">blog.christophvoigt.com</a></em></p>
+
+          </div>
+        </div>
+        <div class="pagination"> 
+          <a class="btn next " href="https://voigt.github.io/post/handle_json_config_in_go/"> Next</a> 
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+  
+  <p>Powered by <a href="http://gohugo.io">Hugo</a>. This theme—Slim—is open sourced on <a href="https://github.com/zhe/hugo-theme-slim">Github</a>.</p>
+  
+</div>
+
+  </div>
+  <script src="https://voigt.github.io/js/slim.js"></script>
+  <script src="https://voigt.github.io/js/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-44298521-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+</body>
+
+</html>

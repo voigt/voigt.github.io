@@ -6,8 +6,122 @@
     <description>Recent content in Post-rsses on Notes on #Golang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 Oct 2016 20:37:05 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 23 Oct 2016 23:56:00 +0200</lastBuildDate>
     <atom:link href="https://voigt.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Setting up Hugo with Github pages</title>
+      <link>https://voigt.github.io/post/hugo_github_pages/</link>
+      <pubDate>Sun, 23 Oct 2016 23:56:00 +0200</pubDate>
+      
+      <guid>https://voigt.github.io/post/hugo_github_pages/</guid>
+      <description>
+
+&lt;p&gt;This post will cover how to organize your Git repository, setup &lt;a href=&#34;https://travis-ci.org/&#34;&gt;Travis-CI&lt;/a&gt; and &lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; in order to automatically deploy a static Website to to &lt;a href=&#34;https://pages.github.com/&#34;&gt;Github Pages&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+
+&lt;p&gt;This article assumes, that you have your Hugo website working locally. This means you&amp;rsquo;ve already chosen a theme, generated some content and Hugo is building without errors.&lt;/p&gt;
+
+&lt;p&gt;Hugo&amp;rsquo;s default output folder is &lt;code&gt;public&lt;/code&gt;. If you changed this using &lt;code&gt;publishdir&lt;/code&gt; in your config file, you need to take care in the following steps.&lt;/p&gt;
+
+&lt;p&gt;No working Hugo site yet? Then have a &lt;a href=&#34;https://gohugo.io/overview/quickstart/&#34;&gt;quickstart&lt;/a&gt; and come back later!&lt;/p&gt;
+
+&lt;h2 id=&#34;preparing-your-github-repository&#34;&gt;Preparing your Github Repository&lt;/h2&gt;
+
+&lt;p&gt;Github pages allows us to setup &lt;em&gt;User/Organization Pages&lt;/em&gt; or &lt;em&gt;Project Pages&lt;/em&gt;. The following steps should work for both, but branch names might differ depending on how you want to organize the repository.&lt;/p&gt;
+
+&lt;p&gt;Rule of thumb:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;For User/Organization Pages have your sources in any branch other than master&lt;/li&gt;
+&lt;li&gt;For Project Pages, have your sources in any branch other than gh-pages&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To me it makes sense to have a &lt;code&gt;sources&lt;/code&gt; branch, containing all files used by Hugo, and a &lt;code&gt;master&lt;/code&gt; branch which holds all the static files ready to serve.
+However, if you go with Project Pages, you should have the sources in the &lt;code&gt;master&lt;/code&gt; branch (e.g. in a sub-folder) and all generated files in the &lt;code&gt;gh-pages&lt;/code&gt; branch (required by GitHub).&lt;/p&gt;
+
+&lt;h2 id=&#34;setting-up-travis-ci&#34;&gt;Setting up Travis CI&lt;/h2&gt;
+
+&lt;p&gt;On Travis CI, you can build and deploy your website automatically.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Create a build.sh&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;You will need &lt;a href=&#34;https://github.com/X1011/git-directory-deploy/blob/master/deploy.sh&#34;&gt;this&lt;/a&gt; fancy shell script in the root of your folder in the &lt;code&gt;sources&lt;/code&gt; branch.&lt;/p&gt;
+
+&lt;p&gt;It will take care that all your generated files end up in the correct branch. Read the &lt;a href=&#34;https://github.com/X1011/git-directory-deploy/blob/master/readme.md&#34;&gt;readme&lt;/a&gt; for the details.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Generate an Github access token&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;You&amp;rsquo;ll need to generate a new &amp;ldquo;Personal Access Token&amp;rdquo; from this Github page: &lt;a href=&#34;https://github.com/settings/tokens&#34;&gt;https://github.com/settings/tokens&lt;/a&gt;. Click on &amp;ldquo;Generate new token&amp;rdquo; and follow the instructions. Select &lt;code&gt;public_repo&lt;/code&gt; or &lt;code&gt;repo&lt;/code&gt; scopes. After generation copy the token.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://s3-eu-central-1.amazonaws.com/friendly-ghost/2016/10/Screen_Shot_2016_10_23_at_23_37_38-1477258737575.png&#34; alt=&#34;New Personal Access Token&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Encrypt the token&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In order to use the token on Travis CI you need to encrypt it. Why? Well your just generated token allows Third Parties the access to your repository. As the &lt;code&gt;travis.yml&lt;/code&gt; will reside in your public repository, you will not want, that someone else except Travis can read this token.
+Use the &lt;a href=&#34;https://docs.travis-ci.com/user/encryption-keys/&#34;&gt;Travis CLI tool&lt;/a&gt; to encrypt the token. Install it:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ gem install travis
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and use it (make sure to replace &lt;code&gt;GENERATED_TOKEN&lt;/code&gt;, &lt;code&gt;USERNAME&lt;/code&gt; and &lt;code&gt;REPO_NAME&lt;/code&gt;):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ travis encrypt GIT_DEPLOY_REPO=https://&amp;lt;GENERATED_TOKEN&amp;gt;@github.com/&amp;lt;USERNAME&amp;gt;/&amp;lt;REPO_NAME&amp;gt;.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Setup .travis.yml&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;You have to create &lt;code&gt;.travis.yml&lt;/code&gt; right into your &lt;code&gt;sources&lt;/code&gt; branch, containing all the details Travis needs to know for the build. The contents should be as follows:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/voigt/56ed4582db245cc03ce4c22258f7cf66.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;strong&gt;Configure Travis-CI&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Now you have to tell Travis which repository should be build. Login to Travis-CI and select your repo.&lt;/p&gt;
+
+&lt;p&gt;In order to make sure Travis builds with every commit to the Repository, the Settings should look like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://s3-eu-central-1.amazonaws.com/friendly-ghost/2016/10/Screen_Shot_2016_10_23_at_23_44_14-1477259183231.png&#34; alt=&#34;Travis-CI Settings&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;prepare-a-hugo-binary&#34;&gt;Prepare a Hugo binary&lt;/h2&gt;
+
+&lt;p&gt;You could advise Travis CI to install Hugo during the website build. A much more elegant way is to cross compile the Hugo binary yourself and then deploy it in the &lt;code&gt;sources&lt;/code&gt; branch. This will also speedup the build.&lt;/p&gt;
+
+&lt;p&gt;Sounds complicated? Not really: Run the following commands line by line&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ mkdir binaries &amp;amp;&amp;amp; cd binaries
+$ env GOPATH=&amp;quot;`pwd`&amp;quot; go get -v github.com/spf13/hugo
+$ env GOPATH=&amp;quot;`pwd`&amp;quot; GOOS=linux GOARCH=amd64 go build -v github.com/spf13/hugo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will create your &lt;code&gt;hugo&lt;/code&gt; binary, compiled for a Travis VM. Make sure to add it to your repo. You can remove all the source clutter.&lt;/p&gt;
+
+&lt;h2 id=&#34;wrapping-up&#34;&gt;Wrapping up&lt;/h2&gt;
+
+&lt;p&gt;In the end, this is what the root directory of your &lt;code&gt;sources&lt;/code&gt; branch should look like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;├── [archetypes]
+├── [binaries]
+    └── hugo
+├── [content]
+├── [data]
+├── [layouts]
+├── [static]
+├── [themes]
+├── config.toml
+├── deploy.sh
+├── .travis.yml
+└── README.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The important files are &lt;code&gt;.travis.yml&lt;/code&gt;, &lt;code&gt;deploy.sh&lt;/code&gt; and the &lt;code&gt;hugo&lt;/code&gt; binary. The other ones are generated by Hugo.&lt;/p&gt;
+
+&lt;p&gt;No with every push to GitHub Travis-CI should run and generate static HTML and push it back to your &lt;code&gt;master&lt;/code&gt; branch. The results should be visible on your GitHub Page.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This Article was first published on &lt;a href=&#34;https://blog.christophvoigt.com/setting-up-hugo-with-github-pages/&#34;&gt;blog.christophvoigt.com&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>How to handle JSON configs in Go</title>
@@ -123,33 +237,6 @@ func main() {
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Of course, other config formats, such as YAML or TOML would also do their work, but they&amp;rsquo;d need to be added separately. JSON is build in and awesome ;)&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>SQLite3 - Basig usage in Golang</title>
-      <link>https://voigt.github.io/post/sqlite_basic_usage/</link>
-      <pubDate>Thu, 20 Oct 2016 20:37:05 +0200</pubDate>
-      
-      <guid>https://voigt.github.io/post/sqlite_basic_usage/</guid>
-      <description>
-
-&lt;h4 id=&#34;example-usage&#34;&gt;Example Usage&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;main.go&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
-
-import (
-	&amp;quot;fmt&amp;quot;
-)
-
-func main() {
-
-	fmt.Println(Urlpath)
-
-}
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
