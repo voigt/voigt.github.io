@@ -1,6 +1,6 @@
 +++
 title = "How to handle JSON configs in Go"
-draft = false
+draft = true
 date = "2016-10-20T20:37:05+02:00"
 
 +++
