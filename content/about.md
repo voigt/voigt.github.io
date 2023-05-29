@@ -20,8 +20,7 @@ I’m Based in Hannover, Germany and live there with two beautiful daughters and
 
 ## 👨🏼‍💻 I code.
 
-- kubernetes release team
-- ae
+- I write code in various languages, but mostly in Go.
 
 ## 🏃 I run.
 
