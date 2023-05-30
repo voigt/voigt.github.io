@@ -1,11 +1,13 @@
 ---
 title: 👋 Hi.
-description: "This is a demo of adding content to the homepage."
+description: "I am Christoph Voigt, a seasoned software engineer, consultant, manager, and entrepreneur, boasting over a decade of experience in the industry."
+
 ---
 
-I’m Christoph Voigt, an experienced software engineer, consultant, manager & entrepreneur with more than 10 years of industry experience. 
+{{< lead >}}
+I am Christoph Voigt, a seasoned software engineer, consultant, manager, and entrepreneur, boasting over a decade of experience in the industry.
+{{< /lead >}}
 
-I focused my career around [#containers](/tags/containers/) ([#kubernetes](/tags/kubernetes/) *\*cough\**), [#golang](/tags/golang/) and cloud infrastructure. I'm furthermore enthusiastic for [#rust](/tags/rust), [#zig](/tags/zig/) and [#wasm](/tags/wasm/).
+Throughout my career, I have dedicated my efforts to working with [#containers](/tags/containers/), [#kubernetes](/tags/kubernetes/), [#golang](/tags/golang/) and cloud infrastructure. Additionally, I am passionate about [#rust](/tags/rust), [#zig](/tags/zig/) and [#wasm](/tags/wasm/).
 
-Together with some friends I founded **Liquid Reply GmbH**, a consultancy specialized in cloud-provider agnostic infrastructure.
-
+In collaboration with a group of colleagues, I co-founded **Liquid Reply GmbH**, a consultancy that specializes in cloud-provider agnostic infrastructure.
