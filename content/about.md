@@ -1,7 +1,7 @@
 ---
 title: 👋 Hi.
 description: 'Who is Christoph Voigt?'
-date: '2019-02-28'
+date: '2023-05-30'
 author: Christoph Voigt
 showAuthor: false
 published: true
@@ -16,21 +16,22 @@ I’m Christoph Voigt, an experienced software engineer, consultant, manager & e
 
 I’m passionate about building, enabling & scaling high-performance teams & organizations, and the technologies that enable them.
 
-I’m Based in Hannover, Germany and live there with two beautiful daughters and the greatest woman I could find. 👨‍👩‍👧‍👧
+I’m Based in Hannover, Germany where I reside with my two wonderful daughters and the most amazing woman I have had the fortune of finding. 👨‍👩‍👧‍👧
 
 ## 👨🏼‍💻 I code.
 
-- I write code in various languages, but mostly in Go.
+- My expertise lies in coding across multiple languages, with a primary focus on Go.
 
 ## 🏃 I run.
 
 - I started running in 2022 with the goal of running a half-marathon. Unfortunately, illness and injuries intervened and prevented progress. Unfortunately, illness and injuries intervened and prevented progress. Therefore, I have so far only [unofficially run a half-marathon](https://www.strava.com/activities/8079748572/overview). But it will come fore sure. In the mean time you can follow my progress on [Strava](https://www.strava.com/athletes/11472957).
 
+- I embarked on my running journey in 2022 with the goal of completing a half-marathon. Unfortunately, my progress was hindered by illness and injuries. Consequently, I have only completed a [half-marathon unofficially so far](https://www.strava.com/activities/8079748572/overview). However, I remain determined to achieve my goal, and in the meantime, you can track my progress on [Strava](https://www.strava.com/athletes/11472957).
+
 ## 📖 I read.
 
+- I have a deep passion for reading and have been immersed in technical books for many years. This habit started during my university days as a means to acquire free books, and I have continued it throughout my professional life.
 - My all-time favourite things on the internet can be found [here](/links). If you read them and like them, tweet me and tell me! I'd love to chat about them with you.
-
-- I've been reading technical books for quite for many years. I started doing it during university as a way to get free books, and have carried it on in to my professional life.
 
 ## 🌐 I Internet.
 
