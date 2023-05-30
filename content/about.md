@@ -12,9 +12,13 @@ showSummary: false
 showTableOfContents: false
 ---
 
-I’m Christoph Voigt, an experienced software engineer, consultant, manager & entrepreneur with more than 10 years of industry experience. Together with some friends I founded Liquid Reply GmbH, a consultancy specialized in cloud-provider agnostic infrastructure.
+{{< lead >}}
+I am Christoph Voigt, a seasoned software engineer, consultant, manager, and entrepreneur, boasting over a decade of experience in the industry.
+{{< /lead >}}
 
-I’m passionate about building, enabling & scaling high-performance teams & organizations, and the technologies that enable them.
+Throughout my career, I have dedicated my efforts to working with [#containers](/tags/containers/), [#kubernetes](/tags/kubernetes/), [#golang](/tags/golang/) and cloud infrastructure. Additionally, I am passionate about [#rust](/tags/rust), [#zig](/tags/zig/) and [#wasm](/tags/wasm/).
+
+In collaboration with a group of colleagues, I co-founded **Liquid Reply GmbH**, a consultancy that specializes in cloud-provider agnostic infrastructure.
 
 I’m Based in Hannover, Germany where I reside with my two wonderful daughters and the most amazing woman I have had the fortune of finding. 👨‍👩‍👧‍👧
 
