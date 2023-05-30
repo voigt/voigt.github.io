@@ -43,8 +43,8 @@ I’m Based in Hannover, Germany where I reside with my two wonderful daughters 
 ## An incomplete list of things I used to do, but don't do anymore:
 
 - **Hannover Gophers**  
-Together with Tobias Pauling I ran the Hannover Gophers meetup. Unfortunately, the pandemic killed it and we decided to quit.
+I co-organized the Hannover Gophers meetup with Tobias Pauling. Unfortunately, the pandemic forced us to discontinue the meetup.
 - **nativecloud.dev**  
-Together with Max Körbächer we ran a weekly newsletter about Cloud-Native Software, Culture and Practices. After two years we decided to stop the newsletter to leave time for other projects.
+I collaborated with Max Körbächer to produce a weekly newsletter covering Cloud-Native Software, Culture, and Practices. After two years, we decided to conclude the newsletter to pursue other projects.
 - **Kubernetes Release Team**  
-I contributed to the Kubernetes Release Team. I was a member of the 1.21, 1.22 and 1.23 Release Team. In 1.22 I was the Bug Triage Lead. After my second child was born I decided to take a break from the Release Team.
+I contributed to the Kubernetes Release Team and served as a member of the 1.22, 1.23, and 1.24 Release Teams. In the 1.22 cycle, I held the position of Bug Triage Lead. However, following the birth of my second child, I decided to take a break from the Release Team.
