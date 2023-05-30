@@ -3,7 +3,7 @@ title: "learn-rust: generics"
 date: 2023-05-25
 author: Christoph Voigt
 showAuthor: false
-published: false
+published: true
 tags:
   - rust
   - learn-rust
