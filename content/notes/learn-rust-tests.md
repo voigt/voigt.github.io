@@ -1,6 +1,6 @@
 ---
-title: "learn-rust: tests"
-date: 2022-05-02
+title: "#learn-rust: tests"
+date: 2023-05-25
 author: Christoph Voigt
 showAuthor: false
 published: true
