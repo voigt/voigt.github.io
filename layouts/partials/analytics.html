@@ -1,0 +1,9 @@
+{{ with site.Params.fathomAnalytics.site }}
+{{ if isset $.Params.fathomAnalytics "domain" }}
+<script defer src="https://{{ $.Params.fathomanalytics.domain }}/script.js" data-site="{{ . }}"></script>
+{{ else }}
+<script defer src="https://cdn.usefathom.com/script.js" data-site="{{ . }}"></script>
+{{ end }}
+{{ end }}
+{{/* template "_internal/google_analytics.html" . */}}
+{{ partial "ga-analytics.html" }}
