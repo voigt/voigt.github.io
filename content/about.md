@@ -13,7 +13,7 @@ showTableOfContents: false
 ---
 
 {{< lead >}}
-I am Christoph Voigt, a seasoned software engineer, consultant, manager, and entrepreneur, boasting over a decade of experience in the industry.
+I am Christoph Voigt, a software engineer, consultant, manager, and entrepreneur, boasting over a decade of experience in the industry.
 {{< /lead >}}
 
 Throughout my career, I have dedicated my efforts to working with [#containers](/tags/containers/), [#kubernetes](/tags/kubernetes/), [#golang](/tags/golang/) and cloud infrastructure. Additionally, I am passionate about [#rust](/tags/rust), [#zig](/tags/zig/) and [#wasm](/tags/wasm/).

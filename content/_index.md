@@ -1,6 +1,6 @@
 ---
 title: 👋 Hi.
-description: "I am Christoph Voigt, a seasoned software engineer, consultant, manager, and entrepreneur, boasting over a decade of experience in the industry."
+description: "I am Christoph Voigt, a software engineer, consultant, manager, and entrepreneur, boasting over a decade of experience in the industry."
 
 ---
 
