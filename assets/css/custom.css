@@ -1,8 +1,20 @@
-/* @font-face {
+@font-face {
     font-family: firacode;
     src: url('/fonts/FiraCodeNerdFont-Light.ttf');
 }
 
-html {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7 {
     font-family: firacode, monospace;
-} */
+}
+
+div.font-bold,
+div.text-xl,
+div.text-neutral-800 {
+    font-family: firacode, monospace;
+}
