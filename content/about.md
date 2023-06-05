@@ -37,6 +37,10 @@ I’m Based in Hannover, Germany where I reside with my two wonderful daughters 
 - I have a deep passion for reading and have been immersed in technical books for many years. This habit started during my university days as a means to acquire free books, and I have continued it throughout my professional life.
 - My all-time favourite things on the internet can be found [here](/links). If you read them and like them, tweet me and tell me! I'd love to chat about them with you.
 
+## 📢 I talk.
+
+- Occasionally, or when I'm really into a topic, I give talks. You can find a list of my talks [here](/talks).
+
 ## 🌐 I Internet.
 
 - [github](https://github.com/voigt)
