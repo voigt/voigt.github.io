@@ -9,6 +9,9 @@ tags:
   - kubernetes
   - golang
   - containers
+aliases:
+    /scale-out-your-raspberry-pi-kubernetes-cluster-to-the-cloud/
+    /post/scale-out-your-raspberry-pi-kubernetes-cluster-to-the-cloud/
 ---
 
 ![Scale-out your Raspberry-Pi Kubernetes cluster to the cloud](https://d22294yc9a7o53.cloudfront.net/img/2022/06/overview-2.png)

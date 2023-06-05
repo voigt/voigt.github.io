@@ -4,7 +4,7 @@ description: Currivulum Vitae
 date: '2019-02-28'
 author: Christoph Voigt
 showAuthor: false
-published: true
+published: false
 showDate: false
 showReadingTime: false
 showWordCount: false
