@@ -1,6 +1,6 @@
 ---
 title: "#learn-rust: generics"
-date: 2023-05-25
+date: 2023-05-24
 author: Christoph Voigt
 showAuthor: false
 published: true
