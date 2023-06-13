@@ -18,7 +18,7 @@ mainSections = ["posts", "notes"]
 
 disableImageOptimization = false
 
-# defaultBackgroundImage = "IMAGE.jpg" # used as default for background images 
+# defaultBackgroundImage = "IMAGE.jpg" # used as default for background images
 # defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all articles
 
 # highlightCurrentMenuArea = true
@@ -49,7 +49,7 @@ disableImageOptimization = false
 [article]
   showDate = true
   showViews = false
-  showLikes = false
+  showLikes = true
   showDateUpdated = false
   showAuthor = true
   showHero = false
@@ -114,6 +114,9 @@ disableImageOptimization = false
   groupByYear = false
   cardView = false
   cardViewScreenWidth = false
+
+[spin]
+  name = "Hello World"
 
 [firebase]
   # apiKey = "XXXXXX"
