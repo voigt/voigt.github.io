@@ -43,10 +43,9 @@
         {{ partial "series-closed.html" . }}
       </div>
      
-     <script>
+      <script>
         var oid = "views_{{ .File.Path }}"
         var oid_likes = "likes_{{ .File.Path }}"
-        console.log("oid_likes: " + oid_likes);
       </script>
       {{ $jsPage := resources.Get "js/page.js" }}
       {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}

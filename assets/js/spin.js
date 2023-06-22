@@ -1,6 +1,5 @@
 const host = 'https://cvo.fermyon.app'
 var liked_page = false
-console.log("Fetching Likes from document...")
 
 var id_likes = oid_likes ? oid_likes.replaceAll("/", "-") : oid_likes
 
