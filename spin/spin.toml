@@ -1,7 +1,7 @@
 spin_manifest_version = "1"
 authors = ["Christoph Voigt <voigt.christoph@gmail.com>"]
 description = "My Personal Website"
-name = "christophvoigt.com"
+name = "christophvoigt-website"
 trigger = { type = "http", base = "/" }
 version = "0.1.0"
 
@@ -13,7 +13,7 @@ allowed_http_hosts = []
 [component.trigger]
 route = "/..."
 [component.build]
-command = "hugo -s ../ -d ./spin/static/ --minify --baseURL 'https://christophvoigt.com/'"
+command = "HUGO_ENVIRONMENT='production' HUGO_ENV='production' hugo -s ../ -d ./spin/static/ --minify --baseURL 'https://christophvoigt.com/'"
 
 [[component]]
 id = "api"
