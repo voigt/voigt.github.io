@@ -1,5 +1,5 @@
 ---
-title: "#learn-rust Rust enums"
+title: "#learn-rust: Rust enums"
 date: 2023-06-18
 author: Christoph Voigt
 showAuthor: false
