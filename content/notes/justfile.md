@@ -3,7 +3,7 @@ title: "Justfile with polyglot support"
 date: 2023-06-22
 author: Christoph Voigt
 showAuthor: false
-published: false
+published: true
 tags:
   - notes
 ---
