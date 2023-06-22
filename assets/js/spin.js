@@ -1,9 +1,10 @@
+const host = 'https://cvo.fermyon.app'
 var liked_page = false
 console.log("Fetching Likes from document...")
 
 var id_likes = oid_likes ? oid_likes.replaceAll("/", "-") : oid_likes
 
-fetch('/api/v1/count/' + id_likes)
+fetch('' + host + '/api/v1/count/' + id_likes)
   .then(response => response.json())
   .then(data => {
     document.querySelectorAll("span[id='" + oid_likes + "']")[0].innerText = data.count;
@@ -21,7 +22,7 @@ fetch('/api/v1/count/' + id_likes)
 
 
 function like_article(id_likes) {
-  fetch('/api/v1/count/' + id_likes, {
+  fetch('' + host + '/api/v1/count/' + id_likes, {
     method: "POST",
   }).then(response => response.json())
     .then(data => {
@@ -39,7 +40,7 @@ function like_article(id_likes) {
 }
 
 function remove_like_article(id_likes) {
-  fetch('/api/v1/count/' + id_likes, {
+  fetch('' + host + '/api/v1/count/' + id_likes, {
     method: "PATCH",
   }).then(response => response.json())
     .then(data => {

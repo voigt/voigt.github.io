@@ -152,7 +152,7 @@ fn handle_api(req: Request) -> Result<Response> {
     Ok(http::Response::builder()
     .status(status)
     .header("Content-Type", "application/json")
-    .header("Access-Control-Allow-Origin", "https://cvo.fermyon.app")
+    .header("Access-Control-Allow-Origin", "https://christophvoigt.com")
     .header("Access-Control-Allow-Methods", "*")
     .header("Access-Control-Allow-Headers", "*")
     .header("Access-Control-Max-Age", "86400")
