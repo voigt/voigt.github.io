@@ -1,23 +1,31 @@
 ---
 title: 🕔 Now
 description: 'Now Page'
-date: '2022-05-23'
+date: '2023-05-21'
 author: Christoph Voigt
 ---
 This is a [now](https://nownownow.com/about) page. If you have a blog, [you should make one](https://nownownow.com/about) too.
 
-## Parenting Child Number Two
+## Family things
 
-While writing these lines, I'm on the fourth of my five-month paternity leave. When we got our first baby, I couldn't really afford to take a more extended break as Julia was in the middle of her Masters's Degree, and I had just started after university. I, therefore, enjoy this time even more. Taking care of a toddler and an eight-year-old certainly has its challenges with a lot of joy, despair, surprise, exhaustion, pride, and sometimes even boredom but a lot of confirmation.
+Our eldest child is about to complete her third year in school, marking an important milestone as she approaches fourth grade, which will determine the secondary school she will attend. Meanwhile, our second child just turned two and is an incredibly energetic and curious little one. She is currently in the process of learning to speak and can already form sentences consisting of two to five words.
 
-## Liquid Reply
+Both my partner and I find ourselves juggling a lot as we work full-time while ensuring the well-being of our children — a challenge that requires careful balancing. Although we have managed to establish a routine that works for us, it feels somewhat fragile, as unexpected business trips or illness can easily disrupt our carefully crafted plans.
 
-In 2020 I and my friends Max Körbächer and Alex Baier had the idea of founding a Kubernetes- and Cloud Native-focused consultancy. Coming from an AWS shop, we realized an ever-increasing demand by customers. We made a business plan, convinced people that this was the right thing to do, and talked to relevant people to help us. In late 2020 we started as "[Liquid Reply](https://www.reply.com/liquid-reply/en/)" as a part of the [Reply Network](https://www.reply.com/en/). Since then, we have grown to 26 people, have roughly a dozen customers, and help those with Kubernetes Platform engineering, Software Development, and taming cloud cost by introducing FinOps practices.
+## Running
+
+I am proud to say that running has finally become a regular part of my life. I now run 2-3 times a week, covering distances ranging from 15 to 30 kilometers, depending on my schedule. I am currently training for a half marathon in September and feel confident that I will be able to complete it successfully. To keep track of my progress, I use my Apple Watch to monitor and record all my runs, which I then upload to Strava. If you're interested in following my journey, you can find me there.
 
 ## WebAssembly
 
-I used to program in Golang- professionally and as a hobby for quite a while. I wrote tooling, servers, Kubernetes controllers, and other wanky stuff... I recently took [that course on edx](https://courses.edx.org/certificates/91f1c404655341539bafd1a4199fa7af), which hooked me with WebAssembly. A whole new world that needs to be explored. The entire ecosystem felt like Kubernetes six years ago. Exciting!
+I already mentioned WebAssembly in my last [now](/now/2021-05-21/) writeup. My interest hasn't decreases and I'm still very much invested in the topic.  
+Within Liquid Reply we have been workin on [kwasm.sh](https://kwasm.sh/), a Kubernetes operator installing multiple WebAssembly runtimes on the cluster. This enables a user to schedule WebAssembly workloads directly next to containers, configured in the same pod manifest. It works on most* Kubernetes distributions, including managed services and brings those clusters en par with Azures Kubernetes Service.  
+Some other super interesting technologies I'm experimenting with are WasmCloud and Spin (the technology that is hosting this website). With huge interest I'm following the formation of wg-wasm, a subgroup of SIG-Runtime.
 
-## Zig
+As I mentioned in my previous update [here](/now/2021-05-21/), my interest in WebAssembly remains unwavering. I continue to delve deeper into this topic, and it continues to captivate me.  
+At Liquid Reply, we have been actively working on a project called [kwasm.sh](https://kwasm.sh/), a Kubernetes operator that installs multiple WebAssembly runtimes on the cluster. This allows users to schedule WebAssembly workloads alongside containers within the same pod manifest. It is compatible with most Kubernetes distributions, including managed services, and brings these clusters on par with Azure's Kubernetes Service.  
+Additionally, I'm currently exploring other fascinating technologies such as WasmCloud and Spin (the technology powering this website). I am also closely following the development of wg-wasm, a subgroup of SIG-Runtime, with great interest.
 
-During my last vacation on the [Island of Juist](https://en.wikipedia.org/wiki/Juist), I stumbled across a [series of writings](https://mitchellh.com/zig) by [Mitchell Hashimoto](https://twitter.com/mitchellh) about a new language called Zig. I was very interested in it because Zig claims to be a "safer" way to write C (due to a novel way of managing memory). The language has a compelling build system (you can also use Zigs build system for other languages like Go or Rust). Furthermore, Zig maintains WebAssembly and Wasi as [first-class build targets](https://ziglang.org/documentation/master/#WebAssembly). It compiles to relatively wasm files, making it an excellent addition to my other current interest. 🤓
+## Rustlang
+
+Rust is gaining increasing relevance across various domains, including servers, WebAssembly, and the tools I am personally invested in, such as aurae. In order to stay up-to-date and proficient in Rust, I feel the need to deepen my knowledge beyond a basic understanding of the compiler. I aim to achieve a level of expertise where I can confidently say, "I know exactly what I'm doing." While I have acquired proficiency in most programming languages through hands-on experience, I've noticed that Rust requires a more focused and dedicated approach. It demands dedicated study and effort, but I find it to be an enjoyable and rewarding endeavor.
