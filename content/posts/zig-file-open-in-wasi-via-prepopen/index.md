@@ -6,6 +6,9 @@ description: Zig File Open in WASI via preopen
 tags:
   - zig
   - wasm
+aliases:
+    /zig-file-open-in-wasi-via-preopen/
+    /posts/zig-file-open-in-wasi-via-preopen/
 ---
 
 WebAssembly programs are running in a secure runtime. Secure in this context also means almost no information sharing between the host and your program. This can become impractical pretty soon when it comes to standard procedures like reading files, network, or other host i/o. Luckily, there is an extension spec to the existing WebAssembly spec called WASI - WebAssembly System Interface.
