@@ -1,3 +1,4 @@
-baseURL = 'http://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+[OutputFormats]
+    [OutputFormats.RSS]
+        mediaType = "application/rss+xml"
+        baseName = "rss"
