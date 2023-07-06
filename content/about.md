@@ -20,7 +20,7 @@ Throughout my career, I have dedicated my efforts to working with [#containers](
 
 In collaboration with a group of colleagues, I co-founded **Liquid Reply GmbH**, a consultancy that specializes in cloud-provider agnostic infrastructure.
 
-I’m Based in Hannover, Germany where I reside with my two wonderful daughters and the most amazing woman I have had the fortune of finding. 👨‍👩‍👧‍👧
+I’m based in Hannover, Germany where I reside with my two wonderful daughters and the most amazing woman I have had the fortune of finding. 👨‍👩‍👧‍👧
 
 ## 👨🏼‍💻 I code.
 
@@ -41,7 +41,7 @@ I’m Based in Hannover, Germany where I reside with my two wonderful daughters 
 
 - Occasionally, or when I'm really into a topic, I give talks. You can find a list of my talks [here](/talks).
 
-## 🌐 I Internet.
+## 🌐 I internet.
 
 - [github](https://github.com/voigt)
 - [hachyderm](https://hachyderm.io/@cv)
