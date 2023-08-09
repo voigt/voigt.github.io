@@ -89,7 +89,7 @@ resource "cloudflare_record" "aaaa_record_github_four" {
 
 resource "cloudflare_record" "ns_record_fermyon_one" {
   zone_id = "${var.zone_id}"
-  name    = "${var.domain}"
+  name    = "blog"
   value   = "dns1.p05.nsone.net"
   type    = "NS"
   ttl     = 1
@@ -97,7 +97,7 @@ resource "cloudflare_record" "ns_record_fermyon_one" {
 
 resource "cloudflare_record" "ns_record_fermyon_two" {
   zone_id = "${var.zone_id}"
-  name    = "${var.domain}"
+  name    = "blog"
   value   = "dns2.p05.nsone.net"
   type    = "NS"
   ttl     = 1
@@ -105,7 +105,7 @@ resource "cloudflare_record" "ns_record_fermyon_two" {
 
 resource "cloudflare_record" "ns_record_fermyon_three" {
   zone_id = "${var.zone_id}"
-  name    = "${var.domain}"
+  name    = "blog"
   value   = "dns3.p05.nsone.net"
   type    = "NS"
   ttl     = 1
@@ -113,7 +113,7 @@ resource "cloudflare_record" "ns_record_fermyon_three" {
 
 resource "cloudflare_record" "ns_record_fermyon_four" {
   zone_id = "${var.zone_id}"
-  name    = "${var.domain}"
+  name    = "blog"
   value   = "dns4.p05.nsone.net"
   type    = "NS"
   ttl     = 1
