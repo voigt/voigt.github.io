@@ -22,9 +22,6 @@ I already mentioned WebAssembly in my last [now](/now/2021-05-21/) writeup. My i
 Within Liquid Reply we have been workin on [kwasm.sh](https://kwasm.sh/), a Kubernetes operator installing multiple WebAssembly runtimes on the cluster. This enables a user to schedule WebAssembly workloads directly next to containers, configured in the same pod manifest. It works on most* Kubernetes distributions, including managed services and brings those clusters en par with Azures Kubernetes Service.  
 Some other super interesting technologies I'm experimenting with are WasmCloud and Spin (the technology that is hosting this website). With huge interest I'm following the formation of wg-wasm, a subgroup of SIG-Runtime.
 
-As I mentioned in my previous update [here](/now/2021-05-21/), my interest in WebAssembly remains unwavering. I continue to delve deeper into this topic, and it continues to captivate me.  
-At Liquid Reply, we have been actively working on a project called [kwasm.sh](https://kwasm.sh/), a Kubernetes operator that installs multiple WebAssembly runtimes on the cluster. This allows users to schedule WebAssembly workloads alongside containers within the same pod manifest. It is compatible with most Kubernetes distributions, including managed services, and brings these clusters on par with Azure's Kubernetes Service.  
-Additionally, I'm currently exploring other fascinating technologies such as WasmCloud and Spin (the technology powering this website). I am also closely following the development of wg-wasm, a subgroup of SIG-Runtime, with great interest.
 
 ## Rustlang
 
