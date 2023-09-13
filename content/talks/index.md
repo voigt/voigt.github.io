@@ -9,7 +9,7 @@ showDate: false
 showReadingTime: false
 showWordCount: false
 showSummary: false
-showTableOfContents: false
+showTableOfContents: true
 ---
 
 ## The Buzz About Green Tech: WebAssembly's Impact on Carbon Footprint Reduction  
