@@ -9,7 +9,7 @@ tags:
 
 In this post, I'm excited to share some insights from my recent journey to Seattle for WasmCon NA 2023. I'll delve into the highlights of the conference, the thriving community, and the current landscape of WebAssembly.
 
-For those seeking a quick summary of overarching trends, look no further:
+For those seeking a tl;dr of overarching trends in the WebAssembly ecosystem, look no further:
 
 - WebAssembly is increasingly finding its niche in Serverless and Plugin Systems.
 - The push to integrate WebAssembly with embedded devices is an emerging trend that several companies are actively exploring.
