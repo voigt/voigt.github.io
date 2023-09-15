@@ -2,7 +2,7 @@
 author: Christoph Voigt
 title: WasmCon 2023 - Recap
 date: 2023-09-14
-description: WasmCon 2023 - Recap
+description: "In this post, I'm excited to share some insights from my recent journey to Seattle for WasmCon NA 2023. I'll delve into the highlights of the conference, the thriving community, and the current landscape of WebAssembly."
 tags:
   - wasm
 ---
