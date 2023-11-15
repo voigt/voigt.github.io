@@ -28,8 +28,6 @@ I’m based in Hannover, Germany where I reside with my two wonderful daughters 
 
 ## 🏃 I run.
 
-- I started running in 2022 with the goal of running a half-marathon. Unfortunately, illness and injuries intervened and prevented progress. Unfortunately, illness and injuries intervened and prevented progress. Therefore, I have so far only [unofficially run a half-marathon](https://www.strava.com/activities/8079748572/overview). But it will come fore sure. In the mean time you can follow my progress on [Strava](https://www.strava.com/athletes/11472957).
-
 - I embarked on my running journey in 2022 with the goal of completing a half-marathon. Unfortunately, my progress was hindered by illness and injuries. Consequently, I have only completed a [half-marathon unofficially so far](https://www.strava.com/activities/8079748572/overview). However, I remain determined to achieve my goal, and in the meantime, you can track my progress on [Strava](https://www.strava.com/athletes/11472957).
 
 ## 📖 I read.
