@@ -43,7 +43,7 @@ I’m based in Hannover, Germany where I reside with my two wonderful daughters 
 
 - [github](https://github.com/voigt)
 - [hachyderm](https://hachyderm.io/@cv)
-- [linkedin](https://linkedin.com/in/username)
+- [linkedin](https://www.linkedin.com/in/chris-cloud-native/)
 - [twitter](https://twitter.com/vogti)
 
 ## An incomplete list of things I used to do, but don't do anymore:
