@@ -10,9 +10,6 @@
               title="{{ .Title }}">{{ .Name | markdownify | emojify }}</a>
           </li>
           {{ end }}
-          <li class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0"></li>
-            <a href="https://firechicken.club/cv/prev">←</a>&nbsp;<a href="https://firechicken.club">🔥🐓</a>&nbsp;<a href="https://firechicken.club/cv/next">→</a>
-          </li>
         </ul>
       </nav>
       {{ end }}
@@ -30,7 +27,11 @@
         {{- end }}
       </p>
       {{ end }}
-  
+
+      <p>
+        <a href="https://firechicken.club/cv/prev">←</a>&nbsp;<a href="https://firechicken.club">🔥🐓</a>&nbsp;<a href="https://firechicken.club/cv/next">→</a>
+      </p>
+
       {{/* Theme attribution */}}
       {{ if .Site.Params.footer.showThemeAttribution | default true }}
       <p class="text-xs text-neutral-500 dark:text-neutral-400">
@@ -41,8 +42,7 @@
           href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>` }}
         {{ i18n "footer.powered_by" (dict "Hugo" $hugo "Theme" $blowfish) | safeHTML }}
       </p>
-      {{ end }}
-  
+      {{ end }}  
     </div>
     <script>
       {{ if not .Site.Params.disableImageZoom | default true }}
