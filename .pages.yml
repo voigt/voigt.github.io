@@ -79,10 +79,10 @@ content:
       - name: body
         label: Body
         type: rich-text
-  - name: talks
-    label: Talks
+  - name: pages
+    label: Pages
     type: collection
-    path: 'content/talks'
+    path: 'content'
     view:
       fields: [ title, published, date ]
     fields:
