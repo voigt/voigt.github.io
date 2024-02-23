@@ -19,7 +19,6 @@ content:
       - name: body
         label: Body
         type: rich-text
-content:
   - name: notes
     label: Notes
     type: collection
