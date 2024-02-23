@@ -1,8 +1,8 @@
 content:
-  - name: posts
-    label: Posts
+  - name: notes
+    label: Notes
     type: collection
-    path: 'content/posts'
+    path: 'content/notes'
     view:
       fields: [ title, published, date ]
     fields:
@@ -19,10 +19,10 @@ content:
       - name: body
         label: Body
         type: rich-text
-  - name: notes
-    label: Notes
+  - name: posts
+    label: Posts
     type: collection
-    path: 'content/notes'
+    path: 'content/posts'
     view:
       fields: [ title, published, date ]
     fields:
