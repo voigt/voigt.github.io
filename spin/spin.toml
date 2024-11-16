@@ -1,36 +1,32 @@
-spin_manifest_version = "1"
+spin_manifest_version = 2
+
+[application]
 authors = ["Christoph Voigt <voigt.christoph@gmail.com>"]
 description = "My Personal Website"
 name = "christophvoigt-website"
-trigger = { type = "http", base = "/" }
 version = "0.1.0"
 
-[[component]]
-source = { url = "https://github.com/fermyon/spin-fileserver/releases/download/v0.0.3/spin_static_fs.wasm", digest = "sha256:38bf971900228222f7f6b2ccee5051f399adca58d71692cdfdea98997965fd0d" }
-id = "hugo"
-files = [ { source = "static", destination = "/" } ]
-allowed_http_hosts = []
-[component.trigger]
-route = "/..."
-[component.build]
-command = "HUGO_ENVIRONMENT='production' HUGO_ENV='production' hugo -s ../ -d ./spin/static/ --minify --baseURL 'https://christophvoigt.com/'"
-
-[[component]]
-id = "api"
-source = "api/target/wasm32-wasi/release/api.wasm"
-allowed_http_hosts = []
-key_value_stores = ["default"]
-[component.trigger]
+[[trigger.http]]
 route = "/api/v1/..."
-[component.build]
-command = "cargo build --target wasm32-wasi --release"
-workdir = "api"
-watch = ["src/**/*.rs", "Cargo.toml"]
+component = "api"
 
-# [[component]]
-# source = { url = "https://github.com/radu-matei/spin-kv-explorer/releases/download/v0.6.0/spin-kv-explorer.wasm", digest = "sha256:38110bc277a393cdfb1a885a0fd56923d47314b2086399d1e3bbcb6daa1f04ad" }
-# id = "kv-explorer"
-# # add or remove stores you want to explore here
-# key_value_stores = ["default"]
-# [component.trigger]
-# route = "/internal/kv-explorer/..."
+[component.api]
+source = "api/target/wasm32-wasi/release/api.wasm"
+allowed_outbound_hosts = []
+key_value_stores = ["default"]
+
+[component.api.build]
+command = "cargo build --target wasm32-wasi --release"
+watch = ["src/**/*.rs", "Cargo.toml"]
+workdir = "api"
+
+[[trigger.http]]
+route = "/..."
+component = "hugo"
+
+[component.hugo]
+source = { url = "https://github.com/fermyon/spin-fileserver/releases/download/v0.2.1/spin_static_fs.wasm", digest = "sha256:5f05b15f0f7cd353d390bc5ebffec7fe25c6a6d7a05b9366c86dcb1a346e9f0f" }
+files = [{ source = "static", destination = "/" }]
+
+[component.hugo.build]
+command = "HUGO_ENVIRONMENT='production' HUGO_ENV='production' hugo -s ../ -d ./spin/static/ --minify --baseURL 'https://christophvoigt.com/'"
