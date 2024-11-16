@@ -1,19 +1,19 @@
 languageCode = "en"
 languageName = "English"
-displayName = "EN"
-isoCode = "en"
 weight = 1
-rtl = false
-
 title = "Christoph Voigt 🚀"
 # logo = "img/logo.png"
 # secondaryLogo = "img/secondary-logo.png"
 # description = "My awesome website"
 # copyright = "Copy, _right?_ :thinking_face:"
 
-dateFormat = "2 January 2006"
+[params]
+  dateFormat = "2 January 2006"
+  isoCode = "en"
+  displayName = "EN"
+  rtl = false
 
-[author]
+[params.author]
   name = "Christoph Voigt"
   image = "img/author.jpg"
   headline = "\"The goal is integrity, not conformity.\" - Joscha Bach"
