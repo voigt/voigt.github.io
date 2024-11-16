@@ -7,7 +7,7 @@ jobs:
   spin:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.112.4
+      HUGO_VERSION: v0.138.0
     name: Build and deploy
     steps:
       - name: Install Hugo CLI
@@ -23,7 +23,7 @@ jobs:
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
         with:
-          toolchain: 1.66
+          toolchain: stable
           targets: wasm32-wasi
       - name: Install Fermyon Spin
         uses: fermyon/actions/spin/setup@v1
