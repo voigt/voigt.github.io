@@ -3,7 +3,7 @@ title: "#learn-rust: tests"
 date: 2023-05-23
 author: Christoph Voigt
 showAuthor: false
-published: true
+published: 2023-05-23
 tags:
   - rust
   - learn-rust

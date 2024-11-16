@@ -3,7 +3,7 @@ title: "#learn-rust What is the question mark (?) operator?"
 date: 2023-06-25
 author: Christoph Voigt
 showAuthor: false
-published: true
+published: 2023-06-25
 tags:
   - rust
   - learn-rust

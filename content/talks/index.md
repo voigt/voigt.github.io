@@ -4,7 +4,7 @@ description: Talks and Presentations I gave
 date: '2023-06-29'
 author: Christoph Voigt
 showAuthor: false
-published: true
+published: '2023-06-29'
 showDate: false
 showReadingTime: false
 showWordCount: false

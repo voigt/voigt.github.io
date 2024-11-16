@@ -2,9 +2,9 @@
 title: 👋 Hi.
 description: 'Who is Christoph Voigt?'
 date: '2023-05-30'
+published: '2023-05-30'
 author: Christoph Voigt
 showAuthor: false
-published: true
 showDate: false
 showReadingTime: false
 showWordCount: false

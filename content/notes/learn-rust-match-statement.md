@@ -3,7 +3,7 @@ title: "#learn-rust: retrieving optional values"
 date: 2023-05-25
 author: Christoph Voigt
 showAuthor: false
-published: true
+published: 2023-05-25
 tags:
   - rust
   - learn-rust

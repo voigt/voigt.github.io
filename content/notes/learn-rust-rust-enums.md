@@ -3,7 +3,7 @@ title: "#learn-rust: Rust enums"
 date: 2023-06-18
 author: Christoph Voigt
 showAuthor: false
-published: true
+published: 2023-06-18
 tags:
   - rust
   - learn-rust
