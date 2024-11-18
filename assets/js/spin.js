@@ -1,5 +1,4 @@
-// const host = 'https://cvo.fermyon.app'
-const host = 'http://127.0.0.1:3000'
+const host = 'https://cvo.fermyon.app'
 var liked_page = false
 
 var id_likes = oid_likes ? oid_likes.replaceAll("/", "-") : oid_likes
