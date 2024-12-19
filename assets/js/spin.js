@@ -1,5 +1,5 @@
 // const host = 'http://localhost:3000'
-const host = 'https://cvo.fermyon.app'
+const host = 'https://christophvoigt.com'
 var liked_page = false
 var id = oid ? oid.replaceAll("/", "-") : oid
 var id_likes = oid_likes ? oid_likes.replaceAll("/", "-") : oid_likes
