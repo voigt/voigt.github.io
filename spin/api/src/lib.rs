@@ -152,8 +152,6 @@ fn handle_request(req: Request) -> anyhow::Result<impl IntoResponse> {
     .status(status)
     .header("Content-Type", "application/json")
     .header("Access-Control-Allow-Origin", "https://christophvoigt.com")
-    .header("Access-Control-Allow-Origin", "http://127.0.0.1:3000")
-    .header("Access-Control-Allow-Origin", "http://cvo.fermyon.app")
     .header("Access-Control-Allow-Methods", "*")
     .header("Access-Control-Allow-Headers", "*")
     .header("Access-Control-Max-Age", "86400")
