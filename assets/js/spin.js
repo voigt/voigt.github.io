@@ -1,6 +1,7 @@
+// const host = 'http://localhost:3000'
 const host = 'https://cvo.fermyon.app'
 var liked_page = false
-
+var id = oid ? oid.replaceAll("/", "-") : oid
 var id_likes = oid_likes ? oid_likes.replaceAll("/", "-") : oid_likes
 
 console.log('> ' + host + '/api/v1/count/' + id_likes)
@@ -98,8 +99,6 @@ function remove_like_article(id_likes) {
 }
 
 function process_article() {
-  var id_likes = oid_likes ? oid_likes.replaceAll("/", "-") : oid_likes
-  console.log(id_likes)
   if (!liked_page) {
     like_article(id_likes)
   } else {
