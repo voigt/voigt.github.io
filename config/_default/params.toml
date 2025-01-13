@@ -12,7 +12,7 @@ autoSwitchAppearance = false
 enableSearch = false
 enableCodeCopy = false
 
-mainSections = ["posts", "notes"]
+mainSections = ["posts", "notes", "external-redirect"]
 # mainSections = ["posts", "notes"]
 # robots = ""
 
