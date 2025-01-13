@@ -11,12 +11,12 @@ route = "/api/v1/..."
 component = "api"
 
 [component.api]
-source = "api/target/wasm32-wasi/release/api.wasm"
+source = "api/target/wasm32-wasip2/release/api.wasm"
 allowed_outbound_hosts = []
 key_value_stores = ["default"]
 
 [component.api.build]
-command = "cargo build --target wasm32-wasi --release"
+command = "cargo build --target wasm32-wasip2 --release"
 watch = ["src/**/*.rs", "Cargo.toml"]
 workdir = "api"
 
