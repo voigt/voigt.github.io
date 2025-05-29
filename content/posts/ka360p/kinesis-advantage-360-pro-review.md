@@ -1,8 +1,9 @@
 ---
-title: "One Week with the Kinesis Advantage360 Pro – A Typing Transformation"
+title: One Week with the Kinesis Advantage360 Pro
 date: 2025-05-12T12:43:58+02:00
 draft: false
-tags: ["keyboards"]
+tags:
+  - keyboards
 ---
 
 After 25 years of typing on traditional German QWERTZ keyboards, I decided to do something radical: switch to the [Kinesis Advantage360 Pro](https://kinesis-ergo.com/shop/adv360pro/), an ergonomic split keyboard with a U.S. QWERTY layout and a price tag that makes most people flinch.
