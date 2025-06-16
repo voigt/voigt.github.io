@@ -8,7 +8,7 @@ tags:
   - containers
   - notes
 ---
-After the thrid time remembering, but not finding the ephemeral container registry service it is time to write a note about it.
+After the third time remembering, but not finding the ephemeral container registry service it is time to write a note about it.
 
  https://ttl.sh/ is a neat service to push an image, test it (e.g. during CI) and forget about it. The image will be automagically deleted, based on a defined time.
 
