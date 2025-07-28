@@ -128,7 +128,7 @@ disableImageOptimization = false
   # measurementId = "XXXXXX"
 
 [fathomAnalytics]
-  site = "EKLWDYLE"
+  # site = "EKLWDYLE"
   # domain = "christophvoigt.com"
 
 [buymeacoffee]
