@@ -6,19 +6,19 @@ description = "My Personal Website"
 name = "christophvoigt-website"
 version = "0.1.0"
 
-[[trigger.http]]
-route = "/api/v1/..."
-component = "api"
-
-[component.api]
-source = "api/target/wasm32-wasip2/release/api.wasm"
-allowed_outbound_hosts = []
-key_value_stores = ["default"]
-
-[component.api.build]
-command = "cargo build --target wasm32-wasip2 --release"
-watch = ["src/**/*.rs", "Cargo.toml"]
-workdir = "api"
+# [[trigger.http]]
+# route = "/api/v1/..."
+# component = "api"
+#
+# [component.api]
+# source = "api/target/wasm32-wasip2/release/api.wasm"
+# allowed_outbound_hosts = []
+# key_value_stores = ["default"]
+#
+# [component.api.build]
+# command = "cargo build --target wasm32-wasip2 --release"
+# watch = ["src/**/*.rs", "Cargo.toml"]
+# workdir = "api"
 
 [[trigger.http]]
 route = "/..."
