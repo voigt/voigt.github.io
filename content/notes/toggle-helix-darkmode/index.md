@@ -9,17 +9,17 @@ draft: false
 tags:
   - notes
 ---
-The problem: you switch macOS system appearance to Light/Dark theme, but Helix‘ appearance does not adjust.
+The problem: you switch macOS system appearance to Light/Dark theme, but Helix‘s appearance does not adjust.
 
-Apparently, I'm not the only one who is bothering to switch Helix appearance at runtime. There are a couple of Github issues discussing the topic from different angles:
+Apparently, I'm not the only one who is bothering to switch Helix's appearance at runtime. There are a couple of GitHub issues discussing the topic from different angles:
 
 - [#8899 - Automatically select light/dark theme variant](https://github.com/helix-editor/helix/issues/8899)
 - [#10281 - Ability to define second theme to sync with OS](https://github.com/helix-editor/helix/discussions/10281#discussioncomment-11246639)
 - [#13281 - Support mode 2031 dark/light mode detection](https://github.com/helix-editor/helix/issues/13281)
 
-While there is no native solution (yet), I found a pretty reliable workaround that I can use until native support lands on main.
+While there is no native solution (yet), I found a fairly reliable workaround that I can use until native support lands on main.
 
-The solution is built around the fact, that helix config can be reloaded via
+The solution is built around the fact that helix config can be reloaded via
 
 ```bash
 $ pkill -USR1 hx
@@ -32,7 +32,7 @@ $ sed -i 's/theme .*/theme = "cattpuccin_frappe"/' ~/.config/helix/config.toml &
   pkill -USR1 hx
 ```
 
-To automate the switch on system appearance chance, we can use the same tool Neovim people use: [dark-notify](https://github.com/cormacrelf/dark-notify). It is a program watching for when macOS switches its appearance (dark/light mode). We can install it via brew:
+To automate the switch on system appearance changes, we can use the same tool Neovim people use: [dark-notify](https://github.com/cormacrelf/dark-notify). It is a program that watches for when macOS switches its appearance (dark/light mode). We can install it via brew:
 
 ```bash
 $ brew install cormacrelf/tap/dark-notify
@@ -102,7 +102,7 @@ Now we need to set a launchd configuration:
 
 ```
 
-Obviously you will have to adjust the path to your bash script. Please note, that the path has to be absolute; relative paths won't work.
+Obviously, you will have to adjust the path to your bash script. Please note that the path has to be absolute; relative paths won't work.
 
 I stored the service in `~/Library/LaunchAgents` as `local.cvoigt.dark-notify.plist`.
 
@@ -120,6 +120,6 @@ $ launchctl list | grep dark-notify
 61513   0       local.cvoigt.dark-notif
 ```
 
-Done correctly, your Helix theme should now adapt within milliseconds to your systems appearance.
+Done correctly, your Helix theme should now adapt within milliseconds to your system's appearance.
 
 {{< video src="toggle-helix-darkmode.mp4" autoplay="true" loop="true" >}}
