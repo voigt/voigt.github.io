@@ -101,7 +101,7 @@ jobs:
 
       - uses: actions/download-artifact@v5
         with:
-          name: artifact
+          name: github-pages
           path: ./spin/static
 
       - name: debug
@@ -109,7 +109,7 @@ jobs:
           pwd && \
           ls -lah && \
           tree spin
-          
+
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
         with:
