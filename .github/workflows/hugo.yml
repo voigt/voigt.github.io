@@ -87,26 +87,33 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-      - name: Install Rust
-        uses: dtolnay/rust-toolchain@stable
-        with:
-          toolchain: stable
-          targets: wasm32-wasip2
-
-      - name: Install Fermyon Spin
-        uses: fermyon/actions/spin/setup@v1
-
-      - name: Build and Deploy to Fermyon Cloud
-        uses: fermyon/actions/spin/deploy@v1
-        with:
-          manifest_file: spin/spin.toml
-          fermyon_token: ${{ secrets.FERMYON_CLOUD_PAT }}
-
   # Deployment job for spin
   deploy-spin:
     runs-on: ubuntu-latest
     needs: build
+    env:
+      HUGO_VERSION: 0.150.0
     steps:
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+      - name: Install Dart Sass Embedded
+        run: sudo snap install dart-sass-embedded
+
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          submodules: recursive
+
+      - name: Checkout Content
+        uses: actions/checkout@v5
+        with:
+          repository: voigt/voigt.github.io-content
+          token: ${{ secrets.CONTENT_PAT }} # `GH_PAT` is a secret that contains your PAT
+          path: content
+
       - name: debug
         run: |
           pwd && \
