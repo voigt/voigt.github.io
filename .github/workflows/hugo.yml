@@ -102,8 +102,19 @@ jobs:
       - uses: actions/download-artifact@v5
         with:
           name: github-pages
-          path: ./spin/static
+          path: .
 
+      - name: debug
+        run: |
+          pwd && \
+          ls -lah && \
+          tree spin
+
+      - name: extract
+        run: |
+          mkdir ./spin/static && \
+          tar -xf artifact.tar -C ./spin/static
+          
       - name: debug
         run: |
           pwd && \
