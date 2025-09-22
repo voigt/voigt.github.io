@@ -7,6 +7,7 @@ jobs:
   spin:
     runs-on: ubuntu-latest
     env:
+      HUGO_VERSION: 0.150.0
     name: Build and deploy
     steps:
       - name: Install Hugo CLI
