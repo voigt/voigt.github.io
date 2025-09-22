@@ -94,30 +94,27 @@ jobs:
     env:
       HUGO_VERSION: 0.150.0
     steps:
-      - name: Install Hugo CLI
-        run: |
-          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
-          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
-
-      - name: Install Dart Sass Embedded
-        run: sudo snap install dart-sass-embedded
-
       - name: Checkout
         uses: actions/checkout@v5
         with:
           submodules: recursive
 
-      - name: Checkout Content
-        uses: actions/checkout@v5
+      - uses: actions/download-artifact@v5
         with:
-          repository: voigt/voigt.github.io-content
-          token: ${{ secrets.CONTENT_PAT }} # `GH_PAT` is a secret that contains your PAT
-          path: content
+          # Name of the artifact to download.
+          # If unspecified, all artifacts for the run are downloaded.
+          # Optional.
+          name: artifact
+
+          # Destination path. Supports basic tilde expansion.
+          # Optional. Default is $GITHUB_WORKSPACE
+          path: ./spin/static
 
       - name: debug
         run: |
           pwd && \
-          ls -lah
+          ls -lah && \
+          tree spin
           
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
@@ -133,3 +130,4 @@ jobs:
         with:
           manifest_file: spin/spin.toml
           fermyon_token: ${{ secrets.FERMYON_CLOUD_PAT }}
+          run_build: false
