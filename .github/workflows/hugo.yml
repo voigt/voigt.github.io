@@ -71,7 +71,7 @@ jobs:
             --baseURL "${{ steps.pages.outputs.base_url }}/"
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./public
 
@@ -101,13 +101,6 @@ jobs:
 
       - uses: actions/download-artifact@v5
         with:
-          # Name of the artifact to download.
-          # If unspecified, all artifacts for the run are downloaded.
-          # Optional.
-          name: artifact
-
-          # Destination path. Supports basic tilde expansion.
-          # Optional. Default is $GITHUB_WORKSPACE
           path: ./spin/static
 
       - name: debug
