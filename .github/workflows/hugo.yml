@@ -42,12 +42,12 @@ jobs:
         run: sudo snap install dart-sass-embedded
 
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           submodules: recursive
 
       - name: Checkout Content
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           repository: voigt/voigt.github.io-content
           token: ${{ secrets.CONTENT_PAT }} # `GH_PAT` is a secret that contains your PAT
@@ -95,7 +95,7 @@ jobs:
       HUGO_VERSION: 0.150.0
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           submodules: recursive
 
