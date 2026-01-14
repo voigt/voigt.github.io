@@ -26,6 +26,11 @@
   weight = 30
 
 [[main]]
+  name = "Learning Zig"
+  pageRef = "learning_zig"
+  weight = 35
+
+[[main]]
   name = "About"
   pageRef = "about"
   weight = 40
