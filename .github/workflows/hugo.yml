@@ -50,6 +50,7 @@ jobs:
         uses: actions/checkout@v5
         with:
           repository: voigt/voigt.github.io-content
+          ref: garden
           token: ${{ secrets.CONTENT_PAT }} # `GH_PAT` is a secret that contains your PAT
           path: content
 
@@ -108,7 +109,7 @@ jobs:
         run: |
           mkdir ./spin/static && \
           tar -xf artifact.tar -C ./spin/static
-          
+
       - name: Debug
         run: |
           pwd && \
